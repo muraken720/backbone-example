@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>
+			Message List
+		</title>
+
+		<link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" type="text/css">
+		<script src="js/libs/jquery-1.7.1.min.js"></script>
+		<script src="js/libs/jquery.mobile-1.1.1.min.js"></script>
+		<script src="js/libs/underscore-min.js"></script>
+		<script src="js/libs/backbone-min.js"></script>
+		<script src="js/libs/tuppari.js"></script>
+		<script src="js/models/message.js"></script>
+		<script src="js/views/message.js"></script>
+		<script src="js/views/app.js"></script>
+		<script src="js/app.js"></script>
+
+		<script id="li-template" type="text/template">
+			<li><%= content %></li>
+		</script>
+	</head>
+	<body>
+		<div id="index" data-role="page">
+			<div data-role="header">
+				<h1>
+					Message List
+				</h1>
+				<a href="#" id="addbtn" class="ui-btn-right" data-role="button" data-inline="true" data-icon="plus" data-iconpos="notext"></a>
+			</div>
+			<div data-role="content">
+		    <label for="msg">Message:</label>
+		    <input type="text" id="msg" value="" data-inline="true"  />
+		    <label for="msglist">Message List:</label>
+				<ul id="msglist" data-role="listview" data-inset="true"></ul>
+			</div>
+			<div data-role="footer" data-position="fixed" class="ui-bar">
+				<a href="#about-dialog" data-icon="info" data-rel="dialog">About</a>
+			</div>
+		</div>
+		<div id="about-dialog" data-role="page">
+			<div data-role="header">
+				<h1>
+					About
+				</h1>
+			</div>
+			<div data-role="content">
+				This is a Message Application using jQuery Mobile.
+			</div>
+		</div>
+	</body>
+</html>
