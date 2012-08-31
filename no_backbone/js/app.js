@@ -6,6 +6,7 @@ $(function() {
   $("#addbtn").bind('click', function(e) {
 
     var text = $("#msg").val();
+
     collection.push({"content": text});
     
     $("#msg").val("");
