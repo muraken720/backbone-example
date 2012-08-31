@@ -5,7 +5,7 @@ $(function() {
   
   $("#addbtn").bind('click', function(e) {
 
- 		var text = $("#msg").val();
+    var text = $("#msg").val();
     collection.push({"content": text});
     
     $("#msg").val("");
@@ -14,7 +14,7 @@ $(function() {
 
     _.each(collection, function(data) {
       
-        $("#msglist").append(template(data));
+        $("#msglist").append(template(data));s
     });
     
     $("#msglist").listview('refresh');

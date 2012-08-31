@@ -1,7 +1,7 @@
 var app = app || {};
 
 $(function () {
-	
+  
   app.AppView = Backbone.View.extend({
   
     el: "#index",
@@ -31,9 +31,9 @@ $(function () {
     onAdd:function (event) {
       console.log("AppView#onAdd");
 
-	    var text = this.$("#msg").val();
+      var text = this.$("#msg").val();
 
-			this.storeData(text);
+      this.storeData(text);
 
       this.$("#msg").val("");
     },
@@ -41,16 +41,16 @@ $(function () {
     onMessage:function (msg) {
       console.log("AppView#onMessage");
 
-			this.storeData(msg);
+      this.storeData(msg);
 
     },
 
-		storeData:function (data) {
+    storeData:function (data) {
       var message = new app.Message();
 
       message.set({"content": data});
 
       this.messageList.add(message);
-		}
+    }
   });
 });

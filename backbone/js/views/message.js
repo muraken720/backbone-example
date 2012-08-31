@@ -3,7 +3,7 @@ var app = app || {};
 $(function () {
 	
   app.MessageListView = Backbone.View.extend({
-	
+  
     el: "#msglist",
 
     template: _.template($("#li-template").html()),

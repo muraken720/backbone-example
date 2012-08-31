@@ -9,10 +9,10 @@ var tuppari = new Tuppari({
 var channel = tuppari.join('message');
 
 for(var i=0; i < 10; i++) {
-	channel.send('text', 'hello world', function (err, res, body) {
-	  if (err) {
-	    console.error(err);
-	  }
-	  console.log(res.statusCode, body);
-	})
+  channel.send('text', 'hello world', function (err, res, body) {
+    if (err) {
+      console.error(err);
+    }
+    console.log(res.statusCode, body);
+  })
 };
