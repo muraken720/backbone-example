@@ -7,7 +7,7 @@ $(function () {
     el: "#index",
 
     events: {
-      "click #addbtn": "onMessage"
+      "click #addbtn": "onAdd"
     },
 
     initialize:function () {
@@ -17,12 +17,12 @@ $(function () {
 
       var listview = new app.MessageListView(this.messageList);
 
-      _.bindAll(this, 'onMessage');
+      _.bindAll(this, 'onAdd');
       
     },
 
-    onMessage:function () {
-      console.log("AppView#onMessage");
+    onAdd:function () {
+      console.log("AppView#onAdd");
 
       var text = this.$("#msg").val();
 

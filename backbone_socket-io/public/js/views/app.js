@@ -7,7 +7,7 @@ $(function () {
     el: "#index",
 
     events: {
-      "click #addbtn": "onMessage"
+      "click #addbtn": "onAdd"
     },
 
     initialize:function () {
@@ -17,7 +17,7 @@ $(function () {
 
       var listview = new app.MessageListView(this.messageList);
 
-      _.bindAll(this, 'onMessage');
+      _.bindAll(this, 'onAdd', 'onMessage');
       
       var client = tuppari.createClient({
           applicationId: 'd7d01460-0dac-4627-b4d2-3d1c17379aa6'
@@ -28,17 +28,29 @@ $(function () {
 
     },
 
-    onMessage:function () {
-      console.log("AppView#onMessage");
+    onAdd:function (event) {
+      console.log("AppView#onAdd");
 
-      var text = this.$("#msg").val();
+	    var text = this.$("#msg").val();
 
-      var message = new app.Message();
-      message.set({"content": text});
-
-      this.messageList.add(message);
+			this.storeData(text);
 
       this.$("#msg").val("");
-    }
+    },
+
+    onMessage:function (msg) {
+      console.log("AppView#onMessage");
+
+			this.storeData(msg);
+
+    },
+
+		storeData:function (data) {
+      var message = new app.Message();
+
+      message.set({"content": data});
+
+      this.messageList.add(message);
+		}
   });
 });
